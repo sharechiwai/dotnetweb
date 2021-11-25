@@ -23,9 +23,7 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: |
-          cd dotnetweb
-          dotnet build --configuration Release
+        run: dotnet build --configuration Release
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
@@ -55,5 +53,5 @@ jobs:
         with:
           app-name: 'dotnetweb'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F1B29BCD0334402F91FCC84C1031D2DA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61B974A7433242B1BDFF84D588A3E921 }}
           package: .
