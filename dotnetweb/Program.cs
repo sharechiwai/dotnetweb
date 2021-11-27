@@ -1,3 +1,7 @@
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
+// See the LICENSE file in the project root for more information.
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -12,18 +16,18 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-  app.UseDeveloperExceptionPage();
+    app.UseDeveloperExceptionPage();
 }
 else
 {
-  app.UseHsts();
-  app.UseHttpsRedirection();
+    app.UseHsts();
+    app.UseHttpsRedirection();
 }
 app.UseSwagger();
 app.UseSwaggerUI(options =>
   {
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
-    options.RoutePrefix = string.Empty;
+      options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+      options.RoutePrefix = string.Empty;
   });
 app.UseAuthorization();
 
